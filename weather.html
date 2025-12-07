@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div class="weather-container" id="weatherContainer">
+        <!-- Animated background elements -->
+        <div class="background-animation" id="backgroundAnimation">
+            <div class="clouds" id="clouds"></div>
+            <div class="rain" id="rain"></div>
+            <div class="snow" id="snow"></div>
+            <div class="lightning" id="lightning"></div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="theme-icon">🌙</span>
+        </button>
+
+        <!-- Main Content -->
+        <div class="weather-card" id="weatherCard">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
+
+            <div class="weather-content hidden" id="weatherContent">
+                <div class="location-section">
+                    <h1 class="location-name" id="locationName">--</h1>
+                    <p class="location-time" id="locationTime">--</p>
+                </div>
+
+                <div class="main-weather">
+                    <div class="temperature-section">
+                        <div class="weather-icon" id="weatherIcon">☀️</div>
+                        <div class="temperature" id="temperature">--°</div>
+                        <div class="weather-description" id="weatherDescription">--</div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Feels Like</span>
+                        <span class="detail-value" id="feelsLike">--°</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Humidity</span>
+                        <span class="detail-value" id="humidity">--%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Wind Speed</span>
+                        <span class="detail-value" id="windSpeed">-- km/h</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Pressure</span>
+                        <span class="detail-value" id="pressure">-- hPa</span>
+                    </div>
+                </div>
+
+                <div class="error-message hidden" id="errorMessage">
+                    <p>Unable to fetch weather data. Please check your connection or try again later.</p>
+                    <button class="retry-btn" id="retryBtn">Retry</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
+
